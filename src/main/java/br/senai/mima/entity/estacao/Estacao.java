@@ -39,6 +39,8 @@ public class Estacao {
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "estacao", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Medicao> medicoes = new ArrayList<>();
 
+	public Estacao() {}
+	
 	public Estacao(Long id, String nome,String descricao, String localizacao, String responsavel) {
 		this.id = id;
 		this.nome = nome;
