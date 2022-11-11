@@ -9,7 +9,7 @@ import br.senai.mima.entity.medicao.Medicao;
 public class MedicaoMapper {
 	
 	public MedicaoDTO toDTO(Medicao medicao) {
-		return new MedicaoDTO(medicao.getData(), medicao.getEstacao().getId(), medicao.getPressao(), medicao.getTemperatura(), medicao.getUmidade());
+		return new MedicaoDTO(medicao.getId(), medicao.getData(), medicao.getEstacao().getId(), medicao.getPressao(), medicao.getTemperatura(), medicao.getUmidade());
 	}
 
 }

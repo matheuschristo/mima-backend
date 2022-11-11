@@ -37,7 +37,7 @@ public class EstacaoController {
 		return ResponseEntity.status(HttpStatus.OK).body(service.findById(id));
 	}
 	
-	@GetMapping()
+	@GetMapping("/getAll")
 	public ResponseEntity<List<EstacaoProjection>> getAllEstacao() {
 		return ResponseEntity.status(HttpStatus.OK).body(service.findAll());
 	}

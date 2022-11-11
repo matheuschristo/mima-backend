@@ -31,7 +31,7 @@ public class MedicaoServiceImpl implements MedicaoService{
 		
 		Estacao estacao = estacaoRepository.findById(dto.idEstacao()).orElseThrow(() -> new EstacaoNotFoundException("Estacao "+ dto.idEstacao() +" was not found."));
 		
-		Medicao medicao = new Medicao(dto.data(), estacao, dto.pressao(), dto.temperatura(), dto.umidade());
+		Medicao medicao = new Medicao(dto.id(), dto.data(), estacao, dto.pressao(), dto.temperatura(), dto.umidade());
 		Medicao medicaoSaved = repository.save(medicao);
 		
 		return mapper.toDTO(medicaoSaved);
