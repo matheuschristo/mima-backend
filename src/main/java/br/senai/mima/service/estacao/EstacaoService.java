@@ -16,4 +16,6 @@ public interface EstacaoService {
 	EstacaoProjection findById(Long id);
 	
 	List<EstacaoProjection> findAll();
+	
+	List<EstacaoProjection> findEstacaoByName(String name);
 }

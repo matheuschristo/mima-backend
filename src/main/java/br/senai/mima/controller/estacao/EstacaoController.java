@@ -37,9 +37,14 @@ public class EstacaoController {
 		return ResponseEntity.status(HttpStatus.OK).body(service.findById(id));
 	}
 	
-	@GetMapping()
+	@GetMapping("/getAll")
 	public ResponseEntity<List<EstacaoProjection>> getAllEstacao() {
 		return ResponseEntity.status(HttpStatus.OK).body(service.findAll());
+	}
+	
+	@GetMapping("/search-name/{name}")
+	public ResponseEntity<List<EstacaoProjection>> getEstacaoByName(@PathVariable(value = "name") String name) {
+		return ResponseEntity.status(HttpStatus.OK).body(service.findEstacaoByName(name));
 	}
 	
 	

@@ -45,7 +45,11 @@ public class EstacaoServiceImpl implements EstacaoService{
 	}
 
 	public List<EstacaoProjection> findAll() {
-		return null;
+		return repository.findEstacoes();
+	}
+
+	public List<EstacaoProjection> findEstacaoByName(String name) {
+		return repository.findEstacaoByNomeContainsIgnoreCase(name);
 	}
 	
 	

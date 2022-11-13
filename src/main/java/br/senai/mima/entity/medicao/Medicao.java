@@ -39,7 +39,8 @@ public class Medicao {
 	@Column(name = "umidade_medicao")
 	private Integer umidade;
 
-	public Medicao(LocalDate data, Estacao estacao, Double pressao, Double temperatura, Integer umidade) {
+	public Medicao(Long id, LocalDate data, Estacao estacao, Double pressao, Double temperatura, Integer umidade) {
+		this.id = id;
 		this.data = data;
 		this.estacao = estacao;
 		this.pressao = pressao;
