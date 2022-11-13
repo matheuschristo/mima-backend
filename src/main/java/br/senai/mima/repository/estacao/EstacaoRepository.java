@@ -18,6 +18,8 @@ public interface EstacaoRepository extends JpaRepository<Estacao, Long>{
 	
 	Optional<EstacaoWithMedicaoProjection> findEstacaoWithMedicaoById(Long id);
 	
+	List<EstacaoProjection> findEstacaoByNomeContainsIgnoreCase(String nome);
+	
 	@Query("SELECT e.id AS id, e.nome AS nome, e.descricao AS descricao, e.localizacao AS localizacao, e.responsavel AS responsavel FROM Estacao e")
 	List<EstacaoProjection> findEstacoes();
 }
