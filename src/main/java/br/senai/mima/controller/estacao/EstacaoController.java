@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.senai.mima.dto.estacao.EstacaoDTO;
+import br.senai.mima.dto.estacao.EstacaoRegisterDTO;
 import br.senai.mima.projection.estacao.EstacaoProjection;
 import br.senai.mima.service.estacao.EstacaoService;
 
@@ -28,7 +29,7 @@ public class EstacaoController {
 	}
 
 	@PostMapping
-	public ResponseEntity<EstacaoDTO> addEstacao(@RequestBody EstacaoDTO dto) {
+	public ResponseEntity<EstacaoRegisterDTO> addEstacao(@RequestBody EstacaoDTO dto) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(service.save(dto));
 	}
 	

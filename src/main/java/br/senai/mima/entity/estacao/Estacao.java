@@ -10,10 +10,13 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import br.senai.mima.entity.medicao.Medicao;
+import br.senai.mima.entity.user.User;
 
 @Entity
 @Table(name = "tb_estacao")
@@ -23,6 +26,10 @@ public class Estacao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_estacao")
 	private Long id;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_user")
+	private User user;
 	
 	@Column(name = "nome_estacao")
 	private String nome;
@@ -41,8 +48,9 @@ public class Estacao {
 
 	public Estacao() {}
 	
-	public Estacao(Long id, String nome,String descricao, String localizacao, String responsavel) {
+	public Estacao(Long id, User user,String nome,String descricao, String localizacao, String responsavel) {
 		this.id = id;
+		this.user = user;
 		this.nome = nome;
 		this.descricao = descricao;
 		this.localizacao = localizacao;
@@ -57,6 +65,14 @@ public class Estacao {
 		this.id = id;
 	}
 	
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	public String getNome() {         
     	return nome;                     
 	}                                 

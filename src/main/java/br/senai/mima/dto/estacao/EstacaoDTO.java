@@ -1,3 +1,3 @@
 package br.senai.mima.dto.estacao;
 
-public record EstacaoDTO(Long id, String nome, String descricao, String localizacao, String responsavel) {}
+public record EstacaoDTO(Long id, Long idUser,String nome, String descricao, String localizacao, String responsavel) {}
